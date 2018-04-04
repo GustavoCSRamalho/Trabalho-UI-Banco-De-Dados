@@ -1,49 +1,104 @@
 angular.module('app').controller('BookController',
     // function($scope, $resource, $routeParams) {
-    function($scope, $routeParams, Book) {
+    function($http, $scope, $routeParams, Book) {
 
     console.log("Entrei BookController");
-        $scope.mensagem = { texto: 'shshshs' };
-        $scope.mensagem = "ssssssssssssssss";
-        console.log("aff");
-        $scope.pega = function () {
-            console.log("clicado!");
-    };
-        // console.log($routeParams.contatoId);
-        // var Contato =  $resource('/contatos/:id');
-        // var Contatos =  $resource('/contatos');
-        // var ID_CONTATO_INC = 3;
-        // $scope.contato = {};
-        // if($routeParams.contatoId){
-        //     Contato.get({id: $routeParams.contatoId},
-        //         function(contato) {
-        //             $scope.contato = contato;
-        //         }, function(erro) {
-        //             $scope.mensagem = {texto: 'Não foi possivel obter o contato.'};
-        //             console.log(erro);
-        //         }
-        //     );
-        // }else{
-        //     $scope.contato = new Contato();
-        // }
-        //
-        // $scope.salva = function () {
-        //     //Como 'contato' é um objeto retornado de $resource é adicinado funções adicionais ao nosso objeto sem sabermos
-        //     // A função $save gera por debaixo dos panos uma requisição do tipo POST que envia para http://localhost/contatos
-        //     $scope.contato.$save()
-        //         .then(function () {
-        //             $scope.mensagem = { texto: 'Salvo com sucesso' };
-        //             // limpa o formulário
-        //             $scope.contato = new Contato();
-        //
-        //         })
-        //         .catch(function (erro) {
-        //             $scope.mensagem = { texto: 'Não foi possível salvar' };
-        //         });
-        // };
-        // Contato.query(function(contatos) {
-        //     $scope.contatos = contatos;
-        // });
 
+
+
+    // $scope.books = [{'id':'1','title':'ola','price':'12','description':'ola mundo'}]
+
+    $scope.book = {};
+
+
+    $scope.salva = function () {
+            //Como 'contato' é um objeto retornado de $resource é adicinado funções adicionais ao nosso objeto sem sabermos
+            // A função $save gera por debaixo dos panos uma requisição do tipo POST que envia para http://localhost/contatos
+            $scope.book.$save()
+                .then(function () {
+                    $scope.mensagem = { texto: 'Salvo com sucesso' };
+                    // limpa o formulário
+                    $scope.book = new Book();
+
+                })
+                .catch(function (erro) {
+                    $scope.mensagem = { texto: 'Não foi possível salvar' };
+                });
+        };
+
+        $scope.pega = function (){
+
+
+        };
+
+        Book.query(function(book) {
+            $scope.books= book;
+        });
+
+        if($routeParams.bookId){
+            Book.get({id: $routeParams.bookId},
+                function(book) {
+                    $scope.book= book;
+                }, function(erro) {
+                    $scope.mensagem = {texto: 'Não foi possivel obter o contato.'};
+                    console.log(erro);
+                }
+            );
+        }else{
+            $scope.book = new Book();
+        }
+
+
+        $scope.atualizar = function () {
+            //Como 'contato' é um objeto retornado de $resource é adicinado funções adicionais ao nosso objeto sem sabermos
+            // A função $save gera por debaixo dos panos uma requisição do tipo POST que envia para http://localhost/contatos
+            // $scope.book.$save()
+            //     .then(function () {
+            //         $scope.mensagem = { texto: 'Salvo com sucesso' };
+            //         // limpa o formulário
+            //         // $scope.book = new Book();
+            //
+            //     })
+            //     .catch(function (erro) {
+            //         $scope.mensagem = { texto: 'Não foi possível salvar' };
+            //     });
+            console.log($scope.book);
+            $http.put('http://localhost:8080/books',$scope.book.toJSON()).then(function () {
+                    // console.log("Tentando pegar!");
+                    // console.log("Achei : "+JSON.valueOf(book));
+                    // console.log("Book : "+JSON.stringify($scope.book));
+                    $scope.mensagem = { texto: 'Alterado com sucesso' };
+                    // limpa o formulário
+                    // $scope.dados = new DadosEmpresa();
+
+                }).catch(function (erro) {
+                        // console.log(err);
+                        $scope.mensagem = { texto: 'Não foi possível Alterar' };
+                    });
+
+            // Book.put({book:$routeParams.book}, function () {
+            //     $scope.mensagem = {texto: 'Atualizado com sucesso.'};
+            // }, function (erro) {
+            //     $scope.mensagem = {texto: 'Não foi possivel atualizar o book.'};
+            //     console.log(erro);
+            // });
+        };
+
+
+
+
+        // $http.get('http://localhost:8080/books').then(function (book) {
+        //     // console.log("Tentando pegar!");
+        //     // console.log("Achei : "+JSON.stringify(book));
+        //     $scope.books = book.data;
+        //     $scope.mensagem = { texto: 'Salvo com sucesso' };
+        //     // limpa o formulário
+        //     // $scope.dados = new DadosEmpresa();
+        //
+        // })
+        //     .catch(function (err) {
+        //         console.log(err);
+        //         $scope.mensagem = { texto: 'Não foi possível salvar' };
+        //     });
 
     });

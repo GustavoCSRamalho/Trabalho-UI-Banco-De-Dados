@@ -1,0 +1,26 @@
+<div class="table-responsive">
+    <table class="table table-hover">
+        <tr>
+            <th>TITULO</th>
+            <th>DESCRIÇÃO</th>
+            <th>PRICE</th>
+            <th>AUTHOR</th>
+            <th class="text-center">ATUALIZAR</th>
+            <th class="text-center">DELETAR</th>
+        </tr>
+        <tr ng-repeat="book in books | filter: filtro">
+            <td>
+                <a ng-href="#/book/{{book.id}}">{{book.title}}</a>
+            </td>
+            <td>{{book.description}}</td>
+            <td>{{book.price}}</td>
+            <td>{{book.author}}</td>
+            <td class="text-center">
+                <a ng-href="#/atualizar/{{book.id}}"><button ng-click="" class="btn btn-warning">Atualizar</button></a>
+            </td>
+            <td class="text-center">
+                <button ng-click="" class="btn btn-warning">Remover</button>
+            </td>
+        </tr>
+    </table>
+</div>

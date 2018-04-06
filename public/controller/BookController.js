@@ -42,7 +42,7 @@ angular.module('app').controller('BookController',
 
         };
 
-        var buscaBook = function(){
+
         var books = function(){
             Book.query(function(book) {
                 $scope.books= book;
@@ -53,7 +53,7 @@ angular.module('app').controller('BookController',
         //     $scope.books= book;
         // });
 
-        buscaBook();
+
 
         books();
 
@@ -95,18 +95,7 @@ angular.module('app').controller('BookController',
 
 
         $scope.atualizar = function () {
-            //Como 'contato' é um objeto retornado de $resource é adicinado funções adicionais ao nosso objeto sem sabermos
-            // A função $save gera por debaixo dos panos uma requisição do tipo POST que envia para http://localhost/contatos
-            // $scope.book.$save()
-            //     .then(function () {
-            //         $scope.mensagem = { texto: 'Salvo com sucesso' };
-            //         // limpa o formulário
-            //         // $scope.book = new Book();
-            //
-            //     })
-            //     .catch(function (erro) {
-            //         $scope.mensagem = { texto: 'Não foi possível salvar' };
-            //     });
+
             console.log($scope.book);
             $http.put('http://localhost:8080/books',$scope.book.toJSON()).then(function () {
                     // console.log("Tentando pegar!");
@@ -121,12 +110,7 @@ angular.module('app').controller('BookController',
                         $scope.mensagem = { texto: 'Não foi possível Alterar' };
                     });
 
-            // Book.put({book:$routeParams.book}, function () {
-            //     $scope.mensagem = {texto: 'Atualizado com sucesso.'};
-            // }, function (erro) {
-            //     $scope.mensagem = {texto: 'Não foi possivel atualizar o book.'};
-            //     console.log(erro);
-            // });
+
         };
 
         $scope.teste = function(book){
@@ -156,21 +140,5 @@ angular.module('app').controller('BookController',
         }
 
 
-
-
-
-        // $http.get('http://localhost:8080/books').then(function (book) {
-        //     // console.log("Tentando pegar!");
-        //     // console.log("Achei : "+JSON.stringify(book));
-        //     $scope.books = book.data;
-        //     $scope.mensagem = { texto: 'Salvo com sucesso' };
-        //     // limpa o formulário
-        //     // $scope.dados = new DadosEmpresa();
-        //
-        // })
-        //     .catch(function (err) {
-        //         console.log(err);
-        //         $scope.mensagem = { texto: 'Não foi possível salvar' };
-        //     });
 
     });

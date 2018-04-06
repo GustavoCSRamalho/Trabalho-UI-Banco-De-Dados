@@ -1,7 +1,12 @@
 angular.module('app',['ngRoute', 'ngResource'])
     .config(function($routeProvider) {
-        $routeProvider.when('/', {
+        $routeProvider.when('/1', {
             templateUrl: 'partials/oi.html',
+            controller: 'BookController'
+        });
+
+        $routeProvider.when('/adicionar', {
+            templateUrl: 'partials/adicionar.html',
             controller: 'BookController'
         });
 
@@ -10,7 +15,7 @@ angular.module('app',['ngRoute', 'ngResource'])
             controller: 'BookController'
         });
 
-        $routeProvider.when('/listagem',{
+        $routeProvider.when('/',{
             templateUrl: 'partials/listagem.html',
             controller: 'BookController'
         });

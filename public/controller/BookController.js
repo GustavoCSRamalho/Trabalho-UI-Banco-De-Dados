@@ -12,18 +12,22 @@ angular.module('app').controller('BookController',
 
 
     $scope.salva = function () {
+        // console.log("Foi : " + $scope.book);
             //Como 'contato' é um objeto retornado de $resource é adicinado funções adicionais ao nosso objeto sem sabermos
             // A função $save gera por debaixo dos panos uma requisição do tipo POST que envia para http://localhost/contatos
-            $scope.book.$save()
-                .then(function () {
-                    $scope.mensagem = { texto: 'Salvo com sucesso' };
-                    // limpa o formulário
-                    $scope.book = new Book();
+        $http.post('http://localhost:8080/books',$scope.book.toJSON()).then(function () {
+            // console.log("Tentando pegar!");
+            // console.log("Achei : "+$scope.book);
+            // console.log("Book : "+JSON.stringify($scope.book));
+            $scope.mensagem = { texto: 'Alterado com sucesso' };
+            // limpa o formulário
+            // $scope.dados = new DadosEmpresa();
 
-                })
-                .catch(function (erro) {
-                    $scope.mensagem = { texto: 'Não foi possível salvar' };
-                });
+        }).catch(function (err) {
+            console.log(err);
+            console.log('Erro');
+            $scope.mensagem = { texto: 'Não foi possível Alterar' };
+        });
         };
 
         $scope.pega = function (){
@@ -31,9 +35,15 @@ angular.module('app').controller('BookController',
 
         };
 
-        Book.query(function(book) {
-            $scope.books= book;
-        });
+        var books = function(){
+            Book.query(function(book) {
+                $scope.books= book;
+            });
+        }
+
+        books();
+
+
 
         if($routeParams.bookId){
             Book.get({id: $routeParams.bookId},
@@ -46,6 +56,26 @@ angular.module('app').controller('BookController',
             );
         }else{
             $scope.book = new Book();
+        }
+
+        $scope.remove = function(book){
+            console.log("Peguei : "+book)
+            $http({
+                method: 'DELETE',
+                url: 'http://localhost:8080/books',
+                params: {
+                    id: book.id
+                },
+                headers: {
+                    'Content-type': 'application/json;charset=utf-8'
+                }
+            })
+                .then(function(response) {
+                    books();
+                    console.log(response.data);
+                }, function(rejection) {
+                    console.log(rejection.data);
+                });
         }
 
 

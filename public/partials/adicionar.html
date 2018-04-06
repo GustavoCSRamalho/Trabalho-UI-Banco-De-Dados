@@ -1,3 +1,7 @@
+
+<p ng-show="mensagem.texto">
+    {{mensagem.texto}}
+</p>
 <div>
     <form ng-submit="salva()">
         <!-- ng-submit="salva()" -->
@@ -7,28 +11,28 @@
                    required ng-model="book.id">
         </div>
         <div class=form-group>
-            <label for="nome">Nome do livro</label>
-            <input type="text" class="form-control" id="nome" name="nome"
-                   required ng-model="book.nome">
+            <label for="title">Nome do livro</label>
+            <input type="text" class="form-control" id="title" name="title"
+                   required ng-model="book.title">
         </div>
         <div class=form-group>
-            <label for="nome">Descrição</label>
-            <input type="text" class="form-control" id="descricao" name="descricao"
-                   required ng-model="book.descricao">
+            <label for="description">Descrição</label>
+            <input type="text" class="form-control" id="description" name="description"
+                   required ng-model="book.description">
         </div>
         <div class=form-group>
-            <label for="nome">Preço</label>
-            <input type="text" class="form-control" id="preco" name="preco"
-                   required ng-model="book.preco">
+            <label for="price">Preço</label>
+            <input type="text" class="form-control" id="price" name="price"
+                   required ng-model="book.price">
         </div>
         <div class=form-group>
-            <label for="nome">Autor</label>
-            <input type="text" class="form-control" id="autor" name="autor"
-                   required ng-model="book.autor">
+            <label for="author">Autor</label>
+            <input type="text" class="form-control" id="author" name="author"
+                   required ng-model="book.author">
         </div>
         <div>
             <button type="submit" class="btn btn-primary">Salvar</button>
-            <a href="#/contatos" class="btn btn-default">Voltar</a>
+            <a href="#/" class="btn btn-default">Voltar</a>
         </div>
     </form>
 </div>

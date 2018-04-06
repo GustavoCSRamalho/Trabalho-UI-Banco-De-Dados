@@ -1,3 +1,6 @@
+<p ng-show="mensagem.texto">
+    {{mensagem.texto}}
+</p>
 <div class="table-responsive">
     <table class="table table-hover">
         <tr>
@@ -16,10 +19,10 @@
             <td>{{book.price}}</td>
             <td>{{book.author}}</td>
             <td class="text-center">
-                <a ng-href="#/atualizar/{{book.id}}"><button ng-click="" class="btn btn-warning">Atualizar</button></a>
+                <a ng-href="#/atualizar/{{book.id}}"><button class="btn btn-warning">Atualizar</button></a>
             </td>
             <td class="text-center">
-                <button ng-click="" class="btn btn-warning">Remover</button>
+                <button ng-click="remove(book)" class="btn btn-warning">Remover</button>
             </td>
         </tr>
     </table>

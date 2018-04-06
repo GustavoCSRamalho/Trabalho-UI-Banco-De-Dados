@@ -1,6 +1,10 @@
 angular.module('app',['ngRoute', 'ngResource'])
     .config(function($routeProvider) {
+<<<<<<< HEAD
         $routeProvider.when('/s', {
+=======
+        $routeProvider.when('/1', {
+>>>>>>> edcfbf9e5623fac2c0321b710d2324c6985ce014
             templateUrl: 'partials/oi.html',
             controller: 'BookController'
         });

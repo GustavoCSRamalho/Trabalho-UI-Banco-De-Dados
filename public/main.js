@@ -16,6 +16,11 @@ angular.module('app',['ngRoute', 'ngResource'])
             controller: 'BookController'
         });
 
+        $routeProvider.when('/chat',{
+            templateUrl: 'partials/chat.html',
+            controller: 'BookController'
+        });
+
         $routeProvider.when('/',{
             templateUrl: 'partials/listagem.html',
             controller: 'BookController'

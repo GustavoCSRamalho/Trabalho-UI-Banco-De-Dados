@@ -1,10 +1,19 @@
 
 <div>
-    <a href="#/adicionar"><button>Adicionar</button></a>
+    <a href="#/adicionar"><button class="btn btn-secondary">Adicionar</button></a>
+</div>
+<div class="input-group">
+    <input ng-model="filtro" type="search" placeholder="Search for...">
+    <span class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
 </div>
 <p ng-show="mensagem.texto">
     {{mensagem.texto}}
 </p>
+
 <div class="table-responsive">
     <table class="table table-hover">
         <tr>

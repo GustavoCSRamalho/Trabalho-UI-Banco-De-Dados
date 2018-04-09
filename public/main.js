@@ -1,4 +1,4 @@
-angular.module('app',['ngRoute', 'ngResource'])
+angular.module('app',['ngRoute', 'ngResource','app.controllers','app.services'])
     .config(function($routeProvider) {
 
         $routeProvider.when('/1', {
@@ -18,8 +18,14 @@ angular.module('app',['ngRoute', 'ngResource'])
 
         $routeProvider.when('/chat',{
             templateUrl: 'partials/chat.html',
-            controller: 'BookController'
+            controller: 'ChatCtrl'
         });
+
+        $routeProvider.when('/chat2',{
+            templateUrl: 'partials/chat2.html',
+            controller: 'ChatCtrl'
+        });
+
 
         $routeProvider.when('/',{
             templateUrl: 'partials/listagem.html',
@@ -38,3 +44,6 @@ angular.module('app',['ngRoute', 'ngResource'])
 
         $routeProvider.otherwise({redirectTo: '/'});
     });
+
+angular.module('app.controllers',[]);
+angular.module('app.services',[]);

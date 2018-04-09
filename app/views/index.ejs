@@ -35,6 +35,12 @@
             <span class="nav-link-text">Inicio</span>
           </a>
         </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+              <a class="nav-link" href="#/chat">
+                  <i class="fa fa-fw fa-table"></i>
+                  <span class="nav-link-text">CHAT</span>
+              </a>
+          </li>
 
       </ul>
       <ul class="navbar-nav sidenav-toggler">
@@ -111,8 +117,11 @@
       <script src="vendor/angular-route/angular-route.js"></script>
       <script src="vendor/angular-resource/angular-resource.js"></script>
       <script src="main.js"></script>
-      <script src="controller/BookController.js"></script>
-      <script src="services/BookService.js"></script>
+<script src="controller/BookController.js"></script>
+<script src="controller/TesteController.js"></script>
+
+<script src="services/BookService.js"></script>
+<script src="services/TesteService.js"></script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="sites/vendor/jquery/jquery.min.js"></script>
@@ -127,12 +136,13 @@
     <script src="sites/js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
     <script src="sites/js/sb-admin-datatables.min.js"></script>
-    <script src="libs/sockjs.js"></script>
-    <script src="libs/stomp.js"></script>
-<script type="text/javascript">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <!--<script src="libs/sockjs.js"></script>-->
+    <!--<script src="libs/webstomp.min.js"></script>-->
+<script>
+
     function connect() {
-        console.log("Logging!");
-        var socket = new WebSocket('ws://localhost:8080/greeting');
+        var socket = new WebSocket('ws://192.168.8.108:8080/greeting');
         ws = Stomp.over(socket);
 
         ws.connect({}, function(frame) {
@@ -157,16 +167,26 @@
     }
 
     function sendName() {
+        console.log("Enviado : "+$("#name").val());
         ws.send($("#name").val());
-        console.log("Nome : "+$("#name"));
+        // $("#greetings").append(" " + $("#name").val()+ "");
+        $("#grettings").append($("#name").val()+"\n");
     }
 
     function showGreeting(message) {
-        console.log("Message");
+        console.log("Coloquei!");
         $("#greetings").append(" " + message + "");
+        $("#grettings").val(message);
+
     }
 
+    // console.log("BC");
+    // connect();
+    // console.log("DC")
+//
 </script>
+
+
     <!--<script src="sites/js/sb-admin-charts.min.js"></script>-->
 
       <!--Angular-->

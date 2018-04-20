@@ -6,6 +6,16 @@ angular.module('app',['ngRoute', 'ngResource','app.controllers','app.services'])
             controller: 'BookController'
         });
 
+        $routeProvider.when('/login', {
+            templateUrl: 'partials/login.html',
+            controller: 'BookController'
+        });
+
+        $routeProvider.when('/register', {
+            templateUrl: 'partials/register.html',
+            controller: 'BookController'
+        });
+
         $routeProvider.when('/adicionar', {
             templateUrl: 'partials/adicionar.html',
             controller: 'BookController'
@@ -16,15 +26,21 @@ angular.module('app',['ngRoute', 'ngResource','app.controllers','app.services'])
             controller: 'BookController'
         });
 
+        // $routeProvider.when('/chat',{
+        //     templateUrl: 'partials/chat.html',
+        //     controller: 'ChatCtrl'
+        // });
+        //
         $routeProvider.when('/chat',{
             templateUrl: 'partials/chat.html',
-            controller: 'ChatCtrl'
+            controller: 'ChatController'
         });
 
-        $routeProvider.when('/chat2',{
-            templateUrl: 'partials/chat2.html',
-            controller: 'ChatCtrl'
-        });
+
+        // $routeProvider.when('/chat2',{
+        //     templateUrl: 'partials/chat2.html',
+        //     controller: 'ChatCtrl'
+        // });
 
 
         $routeProvider.when('/',{

@@ -117,11 +117,12 @@
       <script src="vendor/angular-route/angular-route.js"></script>
       <script src="vendor/angular-resource/angular-resource.js"></script>
       <script src="main.js"></script>
-<script src="controller/BookController.js"></script>
-<script src="controller/TesteController.js"></script>
+    <script src="controller/BookController.js"></script>
+<!--<script src="controller/TesteController.js"></script>-->
+<script src="controller/ChatController.js"></script>
 
 <script src="services/BookService.js"></script>
-<script src="services/TesteService.js"></script>
+<!--<script src="services/TesteService.js"></script>-->
 
     <!-- Bootstrap core JavaScript-->
     <script src="sites/vendor/jquery/jquery.min.js"></script>
@@ -137,54 +138,56 @@
     <!-- Custom scripts for this page-->
     <script src="sites/js/sb-admin-datatables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
-    <!--<script src="libs/sockjs.js"></script>-->
+    <script src="libs/stomp/lib/stomp.min.js"></script>
+    <!--<script src="libs/stomp.js"></script>-->
     <!--<script src="libs/webstomp.min.js"></script>-->
-<script>
 
-    function connect() {
-        var socket = new WebSocket('ws://192.168.8.108:8080/greeting');
-        ws = Stomp.over(socket);
+<!--<script>-->
 
-        ws.connect({}, function(frame) {
-            ws.subscribe("/user/queue/errors", function(message) {
-                alert("Error " + message.body);
-            });
-
-            ws.subscribe("/user/queue/reply", function(message) {
-                showGreeting(message.body);
-            });
-        }, function(error) {
-            alert("STOMP error " + error);
-        });
-    }
-
-    function disconnect() {
-        if (ws != null) {
-            ws.close();
-        }
-        setConnected(false);
-        console.log("Disconnected");
-    }
-
-    function sendName() {
-        console.log("Enviado : "+$("#name").val());
-        ws.send($("#name").val());
-        // $("#greetings").append(" " + $("#name").val()+ "");
-        $("#grettings").append($("#name").val()+"\n");
-    }
-
-    function showGreeting(message) {
-        console.log("Coloquei!");
-        $("#greetings").append(" " + message + "");
-        $("#grettings").val(message);
-
-    }
-
-    // console.log("BC");
-    // connect();
-    // console.log("DC")
+//     function connect() {
+//         var socket = new WebSocket('ws://192.168.8.108:8080/greeting');
+//         ws = Stomp.over(socket);
 //
-</script>
+//         ws.connect({}, function(frame) {
+//             ws.subscribe("/user/queue/errors", function(message) {
+//                 alert("Error " + message.body);
+//             });
+//
+//             ws.subscribe("/user/queue/reply", function(message) {
+//                 showGreeting(message.body);
+//             });
+//         }, function(error) {
+//             alert("STOMP error " + error);
+//         });
+//     }
+//
+//     function disconnect() {
+//         if (ws != null) {
+//             ws.close();
+//         }
+//         setConnected(false);
+//         console.log("Disconnected");
+//     }
+//
+//     function sendName() {
+//         console.log("Enviado : "+$("#name").val());
+//         ws.send($("#name").val());
+//         // $("#greetings").append(" " + $("#name").val()+ "");
+//         $("#grettings").append($("#name").val()+"\n");
+//     }
+//
+//     function showGreeting(message) {
+//         console.log("Coloquei!");
+//         $("#greetings").append(" " + message + "");
+//         $("#grettings").val(message);
+//
+//     }
+//
+//     // console.log("BC");
+//     // connect();
+//     // console.log("DC")
+// //
+<!--</script>-->
 
 
     <!--<script src="sites/js/sb-admin-charts.min.js"></script>-->

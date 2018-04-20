@@ -14,27 +14,9 @@ app.set('view engine','ejs');
 //pasta das views
 app.set('views',"./app/views");
 
-
 app.get('/', function (req, res) {
   res.render('index');
 });
-
-app.get('/books', function (req, res) {
-    
-});
-
-app.post('/books', function (req, res) {
-    
-});
-
-app.get('/books:id', function (req, res) {
-    
-});
-
-app.delete('/books:id', function (req, res) {
-    
-});
-
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');

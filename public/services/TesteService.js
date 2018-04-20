@@ -1,4 +1,4 @@
-angular.module("app.services").service("ChatService", function($q, $timeout) {
+angular.module("app").service("ChatService", function($q, $timeout) {
 
     var service = {}, listener = $q.defer(), socket = {
         client: null,
@@ -6,7 +6,7 @@ angular.module("app.services").service("ChatService", function($q, $timeout) {
     }, messageIds = [];
 
     service.RECONNECT_TIMEOUT = 30000;
-    service.SOCKET_URL = "ws://192.168.8.108:8080/chat";
+    service.SOCKET_URL = "ws://localhost:8080/chat";
     service.CHAT_TOPIC = "/topic/message";
     service.CHAT_BROKER = "/app/chat";
 

@@ -47,12 +47,16 @@ angular.module("app").service("ChatService", function($q, $timeout) {
         socket.stomp.subscribe(service.CHAT_TOPIC, function(data) {
             listener.notify(getMessage(data.body));
         });
+
+        socket.stomp.send(service.CHAT_BROKER,{},"Teste");
     };
 
     var initialize = function() {
+        console.log("2");
         socket.client = new WebSocket(service.SOCKET_URL);
         socket.stomp = Stomp.over(socket.client);
         socket.stomp.connect({}, startListener);
+        console.log("1");
         socket.stomp.onclose = reconnect;
     };
 

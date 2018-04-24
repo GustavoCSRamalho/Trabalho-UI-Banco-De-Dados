@@ -1,16 +1,15 @@
 {
   "name": "stomp-websocket",
   "main": "lib/stomp.min.js",
-  "homepage": "https://github.com/stomp-js/stomp-websocket",
-  "version": "4.0.2",
-  "_release": "4.0.2",
+  "homepage": "https://github.com/jmesnil/stomp-websocket",
+  "version": "2.3.4",
+  "_release": "2.3.4",
   "_resolution": {
     "type": "version",
-    "tag": "4.0.2",
-    "commit": "420eac4256485800e8a521f8239580ac4b1263a8"
+    "tag": "2.3.4",
+    "commit": "b2ba8ce3071215131e99aba9df7061eb4ffbab9e"
   },
-  "_source": "https://github.com/stomp-js/stomp-websocket.git",
-  "_target": "^4.0.2",
-  "_originalSource": "stompjs",
-  "_direct": true
+  "_source": "https://github.com/jmesnil/stomp-websocket.git",
+  "_target": "2.3.4",
+  "_originalSource": "stomp-websocket"
 }

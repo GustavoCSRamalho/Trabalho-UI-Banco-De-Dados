@@ -14,15 +14,24 @@ angular.module('app').controller('BookController',
 
 
     $scope.salva = function () {
-        console.log("Tentando : "+$scope.book);
+        console.log($scope.book);
 
-        $http.post('http://localhost:8080/api/books',$scope.book.toJSON()).then(function () {
-            $scope.mensagem = { texto: 'Salvo com sucesso' };
+        $http({
+            method: 'POST',
+            url: 'http://localhost:8080/api/books',
+            headers: {
+                'Content-type': 'application/json;charset=utf-8',
+                'X-Auth-Token': sessionStorage.getItem(sessionStorage.username)
+            },
+            data: $scope.book
+        })
+            .then(function(response) {
+                $scope.books = response.data;
 
-        }).catch(function (err) {
-            console.log(err);
-            $scope.mensagem = { texto: 'Não foi possível salvar' };
-        });
+            }, function(rejection) {
+                console.log(rejection.data);
+            });
+
         };
 
     $scope.login = function () {

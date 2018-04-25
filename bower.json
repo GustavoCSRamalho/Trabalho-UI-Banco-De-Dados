@@ -1,0 +1,21 @@
+{
+  "name": "myapp",
+  "homepage": "https://github.com/GustavoCSRamalho/TecnologiasEmpresa-UI",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "angular": "^1.6.10",
+    "angular-ui-router": "^1.0.15",
+    "bootstrap": "^4.1.0"
+  }
+}

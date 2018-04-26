@@ -1,31 +1,33 @@
 'use strict';
-var lista = sessionStorage.role;
 
-angular.module('app').controller('bookCtrl', ['$scope','$stateParams', '$location', 'bookService',
-    function ($scope,$stateParams, $location, bookService) {
-        if(!(lista.indexOf("ADMIN") || lista.indexOf("COMUM"))){
-            window.location = "/#/";
+// console.log(lista.data);
+
+angular.module('app').controller('bookCtrl', ['$scope','$stateParams', '$location', 'bookService','sessionService',
+    function ($scope,$stateParams, $location, bookService, sessionService) {
+
+        var lista = sessionStorage.role;
+        if(!(lista.indexOf("ADMIN") || lista.indexOf("USER"))){
+            $location.path("/");
         }
-        if(lista.indexOf("ADMIN")){
+        console.log(lista.indexOf("ADMIN"));
+        if(lista.indexOf("ADMIN") != -1){
             $scope.admin = true;
         }
+        else{
+            $scope.admin = false;
+        }
 
-        console.log("ADMIN : "+$scope.admin);
+        console.log($scope.admin);
 
-
-
-
-        console.log("Entrei!");
         $scope.book = {};
         $scope.books = {};
 
-
-
         var getBooks = function () {
+            console.log("Entrei");
             bookService.getAll().then(function (data) {
+                console.log(data.data);
                 $scope.books = data.data;
-            });
-        }
+            })};
 
         var getBookParam = function(){
             console.log("ID : "+$stateParams.bookId);
@@ -38,9 +40,6 @@ angular.module('app').controller('bookCtrl', ['$scope','$stateParams', '$locatio
                 });
             }
         }
-
-        getBooks();
-        getBookParam();
 
         $scope.submitSalvarForm = function () {
             console.log("bookCtrl");
@@ -63,5 +62,7 @@ angular.module('app').controller('bookCtrl', ['$scope','$stateParams', '$locatio
                 getBooks();
             })
         }
+            getBooks();
+            getBookParam();
 
     }]);

@@ -18,7 +18,10 @@ angular.module('app').controller('loginCtrl', ['$scope', '$location', 'loginServ
 
                 sessionStorage.setItem(data.data.username, data.data.token);
                 sessionStorage.username = data.data.username;
-                sessionStorage.role = data.data.authorities;
+                sessionStorage.role = data.data.authorities[0].authority;
+                console.log("Lista auth");
+                console.log(data.data.authorities[0].authority);
+
                 $location.path("/listbook");
             });
         }

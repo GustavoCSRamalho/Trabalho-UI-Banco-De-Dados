@@ -8,7 +8,8 @@
                 .state('home', {
                     abstract: true,
                     url: "",
-                    templateUrl: "views/home.html"
+                    templateUrl: "views/home.html",
+                    controller: "logoutController"
                 })
                 .state('login', {
                     url: "/",

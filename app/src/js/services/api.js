@@ -84,4 +84,12 @@ angular.module('app').service('api', ['$http', function ($http) {
         })
     }
 
+    this.doLogout = function () {
+        return $http({
+            method: 'GET',
+            url: 'http://localhost:8080/api/logout',
+            headers : {}
+        });
+    }
+
 }]);

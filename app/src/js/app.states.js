@@ -40,6 +40,11 @@
                     url: '/editbook/:bookId',
                     templateUrl: 'views/pages/book/editBook.html',
                     controller: "bookCtrl"
+                })
+                .state('home.chat',{
+                    url: '/chat',
+                    templateUrl: 'views/pages/chat/chat.html',
+                    controller: 'chatController'
                 });
         }]);
 }());

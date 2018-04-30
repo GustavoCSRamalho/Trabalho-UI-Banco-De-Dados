@@ -2,26 +2,61 @@
 
 angular.module('app').controller('chatController',['ChatSocket','$scope',function (chatSocket,$scope) {
 
+    var stompClient;
 
     var initStompClient = function () {
-        chatSocket.init('/chat');
+        // chatSocket.init('/chat');
 
-        chatSocket.connect(function (frame) {
-            console.log("1"+frame);
-        //
-            chatSocket.subscribe("/topic/message", function (message) {
-                // removeIfIsTyping();
-                // $scope.messages.push(JSON.parse(message.body));
-                console.log(message);
+        var socket = new WebSocket('ws://localhost:8080/chat/websocket');
+        stompClient = Stomp.over(socket);
+        stompClient.debug = null;
+        stompClient.heartbeat.outgoing = 1000;
+
+        stompClient.connect({}, function (frame) {
+            console.log(frame);
+
+            stompClient.subscribe("/topic/message", function (message) {
+                console.log("Rec Serv : "+message);
             });
-        //
 
-        //
-        }, function (error) {
-            // toaster.pop('error', 'Error', 'Connection error ' + error);
-            console.log('erro');
-            console.log(error);
+
+            var parsed = JSON.stringify({
+                contents:"Euuuu",
+                fromUserId:"1",
+                toUserId:"2"
+            });
+            stompClient.send("/msg", {}, parsed);
         });
+
+
+
+
+
+
+        // chatSocket.connect({},function (frame) {
+        //
+        //
+        //     console.log("1"+frame);
+        // //
+        // //     chatSocket.subscribe("/topic/message", function (message) {
+        // //
+        // //         // removeIfIsTyping();
+        // //         // $scope.messages.push(JSON.parse(message.body));
+        // //         console.log("R : "+message);
+        // //     });
+        //
+        //
+        // //
+        // }, function (error) {
+        //     // toaster.pop('error', 'Error', 'Connection error ' + error);
+        //     console.log('erro');
+        //     console.log(error);
+        // }
+        // )
+        // // chatSocket.onopen = function (msg) {
+        // //     console.log("A : "+msg);
+        // // }
+        // ;
 
 
 
@@ -38,7 +73,8 @@ angular.module('app').controller('chatController',['ChatSocket','$scope',functio
             fromUserId:"1",
             toUserId:"2"
         });
-        chatSocket.send("/topic/chat", {}, parsed);
+        stompClient.send("/topic/msg", {}, parsed);
+        console.log("2");
     }
 
 

@@ -2,6 +2,12 @@
     <div class="card card-register mx-auto mt-5">
         <div class="card-header">Register an Account</div>
         <div class="card-body">
+            <p class="alert alert-danger text-center" ng-show="mensagem.texto && (status == 200)">
+                {{mensagem.texto}}
+            </p>
+            <p class="alert alert-danger text-center" ng-show="mensagem.texto && (status != 200)">
+                {{mensagem.texto}}
+            </p>
             <form ng-submit="submitRegisterForm()">
                 <div class="form-group">
                     <label for="username">Username</label>
@@ -15,7 +21,7 @@
                     <label for="password">Password</label>
                     <input class="form-control" id="password" type="password" ng-model="cadastro.password" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                <button type="submit" class="btn btn-primary btn-block">Registrar</button>
             </form>
             <div class="text-center">
                 <a class="d-block small mt-3" href="#/login">Login Page</a>

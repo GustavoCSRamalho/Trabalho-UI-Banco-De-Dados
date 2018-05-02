@@ -1,6 +1,6 @@
-<div class="container">
+<!--<div class="container">-->
     <div class="card card-login mx-auto mt-5">
-        <p ng-show="mensagem.texto">
+        <p class="alert alert-danger text-center" ng-show="mensagem.texto && (status != 200)">
             {{mensagem.texto}}
         </p>
         <div class="card-header">Login</div>
@@ -22,4 +22,4 @@
             </div>
         </div>
     </div>
-</div>
+<!--</div>-->

@@ -9,9 +9,12 @@
                 </button>
               </span>
 </div>
-<p ng-show="mensagem.texto">
-    {{mensagem.texto}}
-</p>
+<div >
+    <p ng-show="(status == 417) && mensagem.texto" class="alert alert-danger">
+        {{mensagem.texto}}
+    </p>
+
+</div>
 
 <div class="table-responsive">
     <table class="table table-hover">

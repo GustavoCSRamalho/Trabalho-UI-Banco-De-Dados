@@ -4,8 +4,6 @@ angular.module('app').service('bookService', ['api', function (api) {
 
     this.salvar = function (obj) {
         return api.doSave(obj).then(function (data) {
-            console.log("doRegister");
-            console.log(data);
             return data;
         }).catch(function (err) {
             console.log("Err");

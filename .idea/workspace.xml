@@ -5,14 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/js/controllers/auth/loginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/js/controllers/auth/loginController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/js/controllers/auth/registerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/js/controllers/auth/registerController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/js/controllers/book/bookController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/js/controllers/book/bookController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/js/services/book/bookService.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/js/services/book/bookService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/js/services/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/js/services/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/js/services/auth/loginService.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/js/services/auth/loginService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/pages/auth/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/auth/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/pages/auth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/auth/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/book/addBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/book/addBook.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/book/bookId.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/book/bookId.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/book/editBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/book/editBook.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/book/listBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/book/listBook.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,17 +25,17 @@
       <file leaf-file-name="loginController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/js/controllers/auth/loginController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="176">
+              <caret line="18" column="80" lean-forward="true" selection-start-line="18" selection-start-column="80" selection-end-line="18" selection-end-column="80" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loginService.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="loginService.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/js/services/auth/loginService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+            <state relative-caret-position="120">
+              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -47,8 +43,8 @@
       <file leaf-file-name="api.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/js/services/api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1005">
-              <caret line="67" column="51" selection-start-line="67" selection-start-column="51" selection-end-line="67" selection-end-column="51" />
+            <state relative-caret-position="60">
+              <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -62,20 +58,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/pages/auth/login.html">
+      <file leaf-file-name="bookController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/js/controllers/book/bookController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+            <state relative-caret-position="-75">
+              <caret line="7" column="29" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registerController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/pages/auth/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="132" selection-start-line="20" selection-start-column="132" selection-end-line="20" selection-end-column="132" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registerController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/js/controllers/auth/registerController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+            <state relative-caret-position="255">
+              <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -83,8 +88,8 @@
       <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/pages/auth/register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="90" lean-forward="true" selection-start-line="4" selection-start-column="90" selection-end-line="4" selection-end-column="90" />
+            <state relative-caret-position="150">
+              <caret line="10" column="73" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -92,8 +97,8 @@
       <file leaf-file-name="addBook.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/pages/book/addBook.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="6" lean-forward="true" selection-end-line="10" selection-end-column="6" />
+            <state relative-caret-position="390">
+              <caret line="26" column="14" selection-start-line="24" selection-start-column="8" selection-end-line="26" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -151,7 +156,6 @@
         <option value="$PROJECT_DIR$/app/src/js/controllers/loginController.js" />
         <option value="$PROJECT_DIR$/app/views/pages/auth.html" />
         <option value="$PROJECT_DIR$/app/src/js/services/session/sessionService.js" />
-        <option value="$PROJECT_DIR$/app/src/js/services/api.js" />
         <option value="$PROJECT_DIR$/app/src/js/services/auth/logoutService.js" />
         <option value="$PROJECT_DIR$/app/src/js/controllers/auth/logoutController.js" />
         <option value="$PROJECT_DIR$/app/src/js/services/chat/chatService.js" />
@@ -168,10 +172,12 @@
         <option value="$PROJECT_DIR$/app/views/pages/book/editBook.html" />
         <option value="$PROJECT_DIR$/app/views/pages/book/bookId.html" />
         <option value="$PROJECT_DIR$/app/src/js/controllers/book/bookController.js" />
-        <option value="$PROJECT_DIR$/app/src/js/controllers/auth/loginController.js" />
-        <option value="$PROJECT_DIR$/app/views/pages/auth/login.html" />
-        <option value="$PROJECT_DIR$/app/views/pages/auth/register.html" />
         <option value="$PROJECT_DIR$/app/src/js/controllers/auth/registerController.js" />
+        <option value="$PROJECT_DIR$/app/views/pages/auth/register.html" />
+        <option value="$PROJECT_DIR$/app/views/pages/auth/login.html" />
+        <option value="$PROJECT_DIR$/app/src/js/controllers/auth/loginController.js" />
+        <option value="$PROJECT_DIR$/app/src/js/services/api.js" />
+        <option value="$PROJECT_DIR$/app/src/js/services/auth/loginService.js" />
       </list>
     </option>
   </component>
@@ -195,6 +201,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -313,7 +320,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -371,12 +377,13 @@
       <workItem from="1524842843673" duration="5153000" />
       <workItem from="1525105719321" duration="3813000" />
       <workItem from="1525282009383" duration="2596000" />
-      <workItem from="1525286262487" duration="3887000" />
+      <workItem from="1525286262487" duration="5937000" />
+      <workItem from="1525292416318" duration="1413000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59433000" />
+    <option name="totallyTimeSpent" value="62896000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1377" height="912" extended-state="6" />
@@ -389,7 +396,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.31306598" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.25743854" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -562,13 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/js/controllers/book/bookController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="41" column="48" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/book/bookId.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -583,34 +583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/book/addBook.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="6" lean-forward="true" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/js/services/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="67" column="51" selection-start-line="67" selection-start-column="51" selection-end-line="67" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/js/services/auth/loginService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/js/controllers/auth/loginController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -618,24 +590,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/pages/auth/login.html">
+    <entry file="file://$PROJECT_DIR$/app/views/pages/book/addBook.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        <state relative-caret-position="390">
+          <caret line="26" column="14" selection-start-line="24" selection-start-column="8" selection-end-line="26" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/auth/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="90" lean-forward="true" selection-start-line="4" selection-start-column="90" selection-end-line="4" selection-end-column="90" />
+        <state relative-caret-position="150">
+          <caret line="10" column="73" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/pages/auth/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="132" selection-start-line="20" selection-start-column="132" selection-end-line="20" selection-end-column="132" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/js/controllers/auth/registerController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+        <state relative-caret-position="255">
+          <caret line="17" column="38" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/js/controllers/book/bookController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-75">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/js/services/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/js/controllers/auth/loginController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="18" column="80" lean-forward="true" selection-start-line="18" selection-start-column="80" selection-end-line="18" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/js/services/auth/loginService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
         </state>
       </provider>
     </entry>

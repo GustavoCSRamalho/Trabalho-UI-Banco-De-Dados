@@ -1,4 +1,4 @@
-<div class="container">
+<!--<div class="container">-->
     <div class="card card-register mx-auto mt-5">
         <div class="card-header">Register an Account</div>
         <div class="card-body">
@@ -8,18 +8,27 @@
             <p class="alert alert-danger text-center" ng-show="mensagem.texto && (status != 200)">
                 {{mensagem.texto}}
             </p>
-            <form ng-submit="submitRegisterForm()">
+            <form name="registerUser" ng-disabled="registerUser.$invalid" ng-submit="submitRegisterForm(registerUser.$valid)" novalidate>
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input class="form-control" id="username" type="text" ng-model="cadastro.username" placeholder="Enter the username">
+                    <input class="form-control" id="username" name="username" type="text" ng-model="cadastro.username" required placeholder="Enter the username">
+                </div>
+                <div class="form-group">
+                    <span class="alert alert-danger" ng-show="registerUser.username.$error.required && submitted">O usuario é obrigatório!</span>
                 </div>
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input class="form-control" id="email" type="email" ng-model="cadastro.email" placeholder="Enter email">
+                    <input class="form-control" id="email" name="email" type="email" ng-model="cadastro.email" required placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <span class="alert alert-danger" ng-show="registerUser.email.$error.required && submitted">O email é obrigatório!</span>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input class="form-control" id="password" type="password" ng-model="cadastro.password" placeholder="Password">
+                    <input class="form-control" id="password" name="password" type="password" ng-model="cadastro.password" required placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <span class="alert alert-danger" ng-show="registerUser.password.$error.required && submitted">A senha é obrigatória!</span>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Registrar</button>
             </form>
@@ -29,4 +38,4 @@
             </div>
         </div>
     </div>
-</div>
+<!--</div>-->

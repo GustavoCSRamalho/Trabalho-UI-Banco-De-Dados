@@ -5,14 +5,20 @@
         </p>
         <div class="card-header">Login</div>
         <div class="card-body">
-            <form ng-submit="submiteLoginForm()">
+            <form name="loginForm" ng-disabled="loginForm.$invalid" ng-submit="submiteLoginForm(loginForm.$valid)" novalidate>
                 <div class="form-group">
                     <label for="username">Email address</label>
-                    <input class="form-control" id="username" type="text" ng-model="usuario.username" placeholder="Enter usuario">
+                    <input class="form-control" id="username" name="username" type="text" ng-model="usuario.username" required placeholder="Enter usuario">
+                </div>
+                <div class="form-group">
+                    <span class="alert alert-danger" ng-show="loginForm.username.$error.required && submitted">O usuario é obrigatório!</span>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input class="form-control" id="password" type="password" ng-model="usuario.password" placeholder="Password">
+                    <input class="form-control" id="password" name="password" type="password" ng-model="usuario.password" required placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <span class="alert alert-danger" ng-show="loginForm.password.$error.required && submitted">A senha é obrigatória!</span>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Login</button>
             </form>

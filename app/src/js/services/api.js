@@ -3,13 +3,10 @@
 angular.module('app').service('api', ['$http', function ($http) {
 
     this.doLogin = function (obj) {
-        console.log("API");
-        console.log(obj);
         return $http({
             method: 'POST',
             url: 'http://localhost:8080/api/auth',
-            data: obj,
-            headers: {}
+            data: obj
         });
     }
 

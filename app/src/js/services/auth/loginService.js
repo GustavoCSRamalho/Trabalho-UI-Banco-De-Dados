@@ -3,12 +3,17 @@
 angular.module('app').service('loginService', ['api', function (api) {
 
     this.login = function (Objeto) {
+        console.log("Peguei : ");
+        console.log(Objeto)
         return api.doLogin(Objeto).then(function (data) {
-            // $scope.mensagem = { texto: 'Logado com sucesso!' };
             console.log(data);
-            console.log("Token " + data.data.token);
-            sessionStorage.setItem(data.data.username, data.data.token);
-            sessionStorage.username = data.data.username;
+            if(data.status == 200){
+                sessionStorage.setItem(data.data.username, data.data.token);
+                sessionStorage.username = data.data.username;
+
+            }
+            console.log("Aqui");
+            console.log(data);
             return data;
         })
     }

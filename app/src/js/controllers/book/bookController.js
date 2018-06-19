@@ -3,7 +3,7 @@
 // console.log(lista.data);
 
 angular.module('app').controller('bookCtrl', ['$scope','$stateParams', '$location', 'bookService','sessionService',
-    function ($scope,$stateParams, $location, bookService, sessionService) {
+    function ($scope, $stateParams, $location, bookService, sessionService) {
 
     $scope.submitted = false;
     $scope.status = null;

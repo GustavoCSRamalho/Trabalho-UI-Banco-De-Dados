@@ -23,7 +23,7 @@ angular.module('app').service('api', ['$http', function ($http) {
     this.doSave = function (obj) {
         return $http({
             method: 'POST',
-            url: 'http://localhost:8080/api/books',
+            url: 'http://localhost:8080/api/send',
             headers: {
                 'Content-type': 'application/json;charset=utf-8',
                 'X-Auth-Token': sessionStorage.getItem(sessionStorage.username)
@@ -33,39 +33,40 @@ angular.module('app').service('api', ['$http', function ($http) {
         });
     }
     
-    this.doAtualizar = function (obj) {
-        return $http({
-            method: 'PUT',
-            url: 'http://localhost:8080/api/books',
-            data: obj,
-            headers: {
-                'Content-type': 'application/json;charset=utf-8',
-                'X-Auth-Token': sessionStorage.getItem(sessionStorage.username)
-            }
-        });
-    }
+    // this.doAtualizar = function (obj) {
+    //     return $http({
+    //         method: 'PUT',
+    //         url: 'http://localhost:8080/api/dogs',
+    //         data: obj,
+    //         headers: {
+    //             'Content-type': 'application/json;charset=utf-8',
+    //             'X-Auth-Token': sessionStorage.getItem(sessionStorage.username)
+    //         }
+    //     });
+    // }
     
-    this.doDelete = function (obj) {
-        return $http({
-            method: 'DELETE',
-            url: 'http://localhost:8080/api/books',
-            params: {
-                id: obj.id
-            },
-            headers: {
-                'Content-type': 'application/json;charset=utf-8',
-                'X-Auth-Token': sessionStorage.getItem(sessionStorage.username)
-            }
-        })
-    }
+    // this.doDelete = function (obj) {
+    //     return $http({
+    //         method: 'DELETE',
+    //         url: 'http://localhost:8080/api/dogs',
+    //         params: {
+    //             id: obj.id
+    //         },
+    //         headers: {
+    //             'Content-type': 'application/json;charset=utf-8',
+    //             'X-Auth-Token': sessionStorage.getItem(sessionStorage.username)
+    //         }
+    //     })
+    // }
     
     this.doGetAll = function () {
         return $http({
             method: 'GET',
-            url: 'http://localhost:8080/api/books',
+            url: 'http://localhost:8080/api/animals',
             headers: {
-                'Content-type': 'application/json;charset=utf-8',
-                'X-Auth-Token': sessionStorage.getItem(sessionStorage.username)
+                'Content-type': 'application/json;charset=utf-8'
+                // ,
+                // 'X-Auth-Token': sessionStorage.getItem(sessionStorage.username)
             }
         });
     }
@@ -73,10 +74,11 @@ angular.module('app').service('api', ['$http', function ($http) {
     this.doGetBookId = function (id) {
         return $http({
             method: 'GET',
-            url: 'http://localhost:8080/api/books/'+ id,
+            url: 'http://localhost:8080/api/animal/'+ id,
             headers: {
-                'Content-type': 'application/json;charset=utf-8',
-                'X-Auth-Token': sessionStorage.getItem(sessionStorage.username)
+                'Content-type': 'application/json;charset=utf-8'
+                // ,
+                // 'X-Auth-Token': sessionStorage.getItem(sessionStorage.username)
             }
         })
     }

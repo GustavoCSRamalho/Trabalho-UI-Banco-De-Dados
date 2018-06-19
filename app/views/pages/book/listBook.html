@@ -26,7 +26,7 @@
             <th class="text-center" ng-show="admin">ATUALIZAR</th>
             <th class="text-center" ng-show="admin">DELETAR</th>
         </tr>
-        <tr ng-repeat="book in books | filter: filtro">
+        <tr ng-repeat="book in dogs | filter: filtro">
             <td>
                 <a ng-href="#/bookid/{{book.id}}">{{book.title}}</a>
             </td>

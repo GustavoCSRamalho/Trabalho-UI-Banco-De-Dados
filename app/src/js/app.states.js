@@ -45,6 +45,10 @@
                     ,
                     controller: "informationCtrl"
                 })
+                .state('home.cadastrodogs', {
+                    url: '/cadastroanimal',
+                    templateUrl : "views/pages/information/cadastro.html"
+                })
                 // .state('home.bookid',{
                 //     url: '/bookid/:bookId',
                 //     templateUrl: "views/pages/dog/bookId.html",

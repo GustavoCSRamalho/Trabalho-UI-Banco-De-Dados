@@ -31,7 +31,7 @@ angular.module('app').controller('informationCtrl', ['$scope', '$stateParams', '
         };
 
         var getDogID = function () {
-            console.log("ID : " + $stateParams.bookId);
+            console.log("ID : " + $stateParams.animalId);
             // var id  = $stateParams.bookId;
             var id = $stateParams.animalId;
             if (id) {

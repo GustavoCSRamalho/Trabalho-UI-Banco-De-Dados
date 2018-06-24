@@ -11,6 +11,15 @@ angular.module('app').service('informationService', ['api', function (api) {
         })
     };
 
+    this.upload= function (obj) {
+        return api.doUpload(obj).then(function (data) {
+            return data;
+        }).catch(function (err) {
+            console.log("Err");
+            return err;
+        })
+    };
+
     this.atualizar = function (obj) {
         return api.doAtualizar(obj).then(function (data) {
             return data;
@@ -37,7 +46,7 @@ angular.module('app').service('informationService', ['api', function (api) {
     }
 
     this.getDogId = function (id) {
-        return api.doGetBookId(id).then(function (data) {
+        return api.doGetAnimalId(id).then(function (data) {
             return data;
         }).catch(function (err) {
             return err;

@@ -1,40 +1,49 @@
 <div class="container jumbotron">
 
-    <form action="/action_page.php">
+    <form ng-submit="submitSalvarForm()">
         <h3>Cadastre seu animal para encontrar um novo lar para ele!</h3>
-
         <div class="form-group">
-            <label class="control-label col-sm-2" for="email">Nome do Animal:</label>
+            <input type="hidden" class="form-control" id="id" name="id"
+                   ng-model="animal.id">
+        </div>
+        <div class="form-group">
+            <label class="control-label  col-sm-2" for="email">Nome do Animal:</label>
             <div class="col-sm-5">
-                <input type="input" class="form-control" id="email" placeholder="Nome do animal">
+                <input type="input" ng-model="animal.name" class="form-control" id="email" placeholder="Nome do animal">
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Descrição:</label>
+            <label class="control-label col-sm-2" for="description">Descrição:</label>
             <div class="col-sm-5">
-                <input type="input" class="form-control" id="pwd" placeholder="Descrição">
+                <input type="input" ng-model="animal.description" class="form-control" id="description" placeholder="Descrição">
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Local:</label>
+            <label class="control-label col-sm-2" for="local">Local:</label>
             <div class="col-sm-5">
-                <input type="input" class="form-control" id="pwd" placeholder="Local">
+                <input type="input" ng-model="animal.local" class="form-control" id="local" placeholder="Local">
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-2" for="pwd">Raça:</label>
+                <label class="control-label col-sm-2" for="race">Raça:</label>
                 <div class="col-sm-5">
-                    <input type="input" class="form-control" id="pwd" placeholder="Raça">
+                    <input type="input" ng-model="animal.race" class="form-control" id="race" placeholder="Raça">
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-2" for="pwd">Genero:</label>
+                <label class="control-label col-sm-2" for="gender">Genero:</label>
                 <div class="col-sm-5">
-                    <input type="input" class="form-control" id="pwd" placeholder="Genero">
+                    <input type="input" ng-model="animal.gender" class="form-control" id="gender" placeholder="Genero">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="bear">Porte:</label>
+                <div class="col-sm-5">
+                    <input type="input" ng-model="animal.bear" class="form-control" id="bear" placeholder="Porte">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <input type="file"  file-model="file">
+                    <input id="files" type="file"  ng-model="file" name="file">
                 </div>
             </div>
             <div class="form-group">

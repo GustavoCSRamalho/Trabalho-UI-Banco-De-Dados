@@ -32,10 +32,14 @@
         <div ng-repeat="animal in dogs">
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                    <a ng-href="#/animal/{{animal.id}}">
+                        <img class="card-img-top" src="{{animal.file}}" alt="" height="300" width="500">
+                    </a>
                     <div class="card-body">
                         <h4 class="card-title">
                             <a href="#">{{animal.name}}</a>
+                            <a href="#">{{animal.description}}</a>
+
                         </h4>
                     </div>
                     <div class="card-footer">

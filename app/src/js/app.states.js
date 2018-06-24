@@ -47,18 +47,19 @@
                 })
                 .state('home.cadastrodogs', {
                     url: '/cadastroanimal',
-                    templateUrl : "views/pages/information/cadastro.html"
+                    templateUrl : "views/pages/information/cadastro.html",
+                    controller: "cadastroAnimalCtrl"
                 })
                 // .state('home.bookid',{
                 //     url: '/bookid/:bookId',
                 //     templateUrl: "views/pages/dog/bookId.html",
                 //     controller : "bookCtrl"
                 // })
-                // .state('home.animalid',{
-                //     url: '/animal/:animalId',
-                //     templateUrl: "views/pages/dog/bookId.html",
-                //     controller : "informationCtrl"
-                // })
+                .state('home.animalid',{
+                    url: '/animal/:animalId',
+                    templateUrl: "views/pages/information/animalId.html",
+                    controller : "informationCtrl"
+                })
                 // .state('home.editbook',{
                 //     url: '/editbook/:bookId',
                 //     templateUrl: 'views/pages/dog/editBook.html',

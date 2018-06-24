@@ -21,12 +21,29 @@ angular.module('app').service('api', ['$http', function ($http) {
     }
 
     this.doSave = function (obj) {
+        console.log("Dentro do doSave");
+        console.log(obj);
         return $http({
             method: 'POST',
             url: 'http://localhost:8080/api/send',
             headers: {
-                'Content-type': 'application/json;charset=utf-8',
-                'X-Auth-Token': sessionStorage.getItem(sessionStorage.username)
+                'Content-type': 'application/json;charset=utf-8'//,
+                // 'X-Auth-Token': sessionStorage.getItem(sessionStorage.username)
+            },
+            data : obj
+
+        });
+    }
+    this.doUpload = function (obj) {
+        console.log("Dentro do doUpload");
+        console.log(obj);
+        return $http({
+            method: 'POST',
+            url: 'http://localhost:8080/api/upload',
+            transformRequest : angular.identity,
+            headers: {
+                'Content-type': undefined//,
+                // 'X-Auth-Token': sessionStorage.getItem(sessionStorage.username)
             },
             data : obj
 
@@ -71,7 +88,7 @@ angular.module('app').service('api', ['$http', function ($http) {
         });
     }
     
-    this.doGetBookId = function (id) {
+    this.doGetAnimalId = function (id) {
         return $http({
             method: 'GET',
             url: 'http://localhost:8080/api/animal/'+ id,
